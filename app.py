@@ -171,5 +171,4 @@ app = gr.mount_gradio_app(fastapi_app, demo, path="/")
 
 if __name__ == "__main__":
     import uvicorn
-    # Render injects PORT at runtime; 7860 is the local fallback.
     uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 7860)))

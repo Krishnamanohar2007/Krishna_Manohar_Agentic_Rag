@@ -111,7 +111,6 @@ def call_model(state: AgentState):
         )
     )
     response = llm.invoke([system_prompt] + state["messages"])
-    # Normalize list-structured content to clean text to prevent UI/downstream type issues
     response.content = extract_text(response.content)
     return {"messages": [response]}
 
